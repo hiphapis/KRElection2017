@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>19대 대선 투표날까지</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="KRElection2016.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="flipclock.min.js"></script>
+    <script type="text/javascript">
+    (function($) {
+      FlipClock.Lang.Korean = {
+        'years'   : '년',
+        'months'  : '월',
+        'days'    : '일',
+        'hours'   : '시',
+        'minutes' : '분',
+        'seconds' : '초'
+      };
+      FlipClock.Lang['ko']      = FlipClock.Lang.Korean;
+      FlipClock.Lang['ko-kr']   = FlipClock.Lang.Korean;
+      FlipClock.Lang['korean']  = FlipClock.Lang.Korean;
+    }(jQuery));
+    </script>
+  </head>
+  <body>
+    <section>
+      <h1>19대 대선 투표날까지</h1>
+      <p>2017년 12월 20일 (수)<br>오전 6시부터 오후 6시까지</p>
+      <div class="election"></div>
+    </section>
+
+    <section>
+      <h1>19대 대선 사전 투표날까지</h1>
+      <p>2017년 12월 15일 ~ 16일<br>매일 오전 6시부터 오후 6시까지</p>
+      <div class="before-election"></div>
+    </section>
+
+    <section>
+      <h1>19대 대선 선상 투표날까지</h1>
+      <p>2017년 12월 12일 ~ 15일</p>
+      <div class="boat-election"></div>
+    </section>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var now = new Date().getTime() / 1000;
+
+      var electionDay = new Date(2017, 12, 20, 6, 00).getTime() / 1000;
+      var clock = $('.election').FlipClock(electionDay - now, {
+        clockFace: 'DailyCounter',
+        language: 'ko',
+        countdown: true
+      });
+
+      var beforeElectionDay = new Date(2017, 12, 15, 6, 00).getTime() / 1000;
+      var clock = $('.before-election').FlipClock(beforeElectionDay - now, {
+        clockFace: 'DailyCounter',
+        language: 'ko',
+        countdown: true
+      });
+
+      var boatElectionDay = new Date(2017, 12, 12, 6, 00).getTime() / 1000;
+      var clock = $('.boat-election').FlipClock(boatElectionDay - now, {
+        clockFace: 'DailyCounter',
+        language: 'ko',
+        countdown: true
+      });
+
+    });
+  </script>
+  </body>
+</html>
